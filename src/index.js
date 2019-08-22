@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const fetch = require('node-fetch')
 const cron = require('node-cron')
+require('dotenv').config()
 
 const app = express()
 app.use(bodyParser.json())
@@ -13,7 +14,7 @@ app.use(cors())
 const server = 'localhost:27017'
 const database = 'achievements'
 const mondoDB = `mongodb://${server}/${database}`
-mongoose.connect(mondoDB, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || mondoDB, { useNewUrlParser: true })
 
 const db = mongoose.connection
 
@@ -133,6 +134,6 @@ cron.schedule('* * * * *', () => {
   })
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Example app listening on port 3000!')
 })
