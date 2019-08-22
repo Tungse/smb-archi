@@ -27,7 +27,9 @@ db.once('open', function () {
 })
 
 app.get('/', (req, res) => {
-  res.end(JSON.stringify(req))
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('Hello world')
+  res.end()
 })
 
 app.post('/', (req, res) => {
