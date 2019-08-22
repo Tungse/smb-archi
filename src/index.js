@@ -103,7 +103,7 @@ app.post('/', (req, res) => {
   res.end()
 })
 
-cron.schedule('* * * * *', () => {
+cron.schedule('* * * 31 * *', () => {
   console.log('running a task every minute')
 
   fetch('https://hooks.slack.com/services/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', {
