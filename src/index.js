@@ -11,7 +11,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
-mongoose.connect('mongodb://archi:go@smb-archi-shard-00-00-gaxqw.mongodb.net:27017/archievements,smb-archi-shard-00-01-gaxqw.mongodb.net:27017/archievements,smb-archi-shard-00-02-gaxqw.mongodb.net:27017/archievements?ssl=true&replicaSet=smb-archi-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect('mongodb://archi:lol@smb-archi-shard-00-00-gaxqw.mongodb.net:27017,smb-archi-shard-00-01-gaxqw.mongodb.net:27017,smb-archi-shard-00-02-gaxqw.mongodb.net:27017/test?ssl=true&replicaSet=smb-archi-shard-0&authSource=admin&retryWrites=true&w=majority')
 
 const db = mongoose.connection
 
