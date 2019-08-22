@@ -11,7 +11,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
-mongoose.connect('mongodb://archi:go@smb-archi-gaxqw.mongodb.net/test', { useNewUrlParser: true })
+mongoose.connect('mongodb://archi:go@smb-archi-gaxqw.mongodb.net/archievements', { useNewUrlParser: true })
 
 const db = mongoose.connection
 
