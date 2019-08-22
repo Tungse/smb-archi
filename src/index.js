@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 const server = 'smb-archi-shard-00-00-gaxqw.mongodb.net:27017'
 const database = 'achievements'
-const mondoDB = `mongodb://${server}/${database}`
+const mondoDB = `mongodb://archi:go@${server}/${database}`
 mongoose.connect(mondoDB, { useNewUrlParser: true })
 
 const db = mongoose.connection
