@@ -25,6 +25,10 @@ db.once('open', function () {
   console.info('connection succeded')
 })
 
+app.get('/', (req, res) => {
+  res.end(JSON.stringify(req))
+})
+
 app.post('/', (req, res) => {
   console.log(req.body)
 
